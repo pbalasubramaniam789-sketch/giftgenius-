@@ -44,8 +44,7 @@ const gifts = {
 
 // Function to extract numeric price from price string
 function getNumericPrice(priceStr) {
-    return parseInt(priceStr.replace(/[^₹,\d]/g, '').replace(/,/g, ''));
-}
+    return parseInt(priceStr.replace(/\D/g, ''));}
 
 // Function to filter gifts by budget
 function filterByBudget(giftList, budget) {
