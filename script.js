@@ -42,6 +42,30 @@ const gifts = {
     ]
 };
 
+// Function to extract numeric price from price string
+function getNumericPrice(priceStr) {
+    return parseInt(priceStr.replace(/[^₹,\d]/g, '').replace(/,/g, ''));
+}
+
+// Function to filter gifts by budget
+function filterByBudget(giftList, budget) {
+    const budgetRanges = {
+        'under500': { min: 0, max: 500 },
+        '500-1000': { min: 500, max: 1000 },
+        '1000-2500': { min: 1000, max: 2500 },
+        '2500-5000': { min: 2500, max: 5000 },
+        'above5000': { min: 5000, max: Infinity }
+    };
+
+    const range = budgetRanges[budget];
+    if (!range) return giftList;
+
+    return giftList.filter(gift => {
+        const price = getNumericPrice(gift.price);
+        return price >= range.min && price <= range.max;
+    });
+}
+
 // Form submission
 document.getElementById('giftForm').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -57,7 +81,15 @@ document.getElementById('giftForm').addEventListener('submit', function(e) {
     }
 
     // Get gifts for recipient
-    const selectedGifts = gifts[recipient] || gifts.friend;
+    let selectedGifts = gifts[recipient] || gifts.friend;
+
+    // Filter gifts by budget
+    selectedGifts = filterByBudget(selectedGifts, budget);
+
+    // If no gifts match the budget, show default gifts filtered by budget
+    if (selectedGifts.length === 0) {
+        selectedGifts = filterByBudget(gifts.default, budget);
+    }
 
     // Show results
     document.getElementById('giftFinder').style.display = 'none';
