@@ -1,7 +1,3 @@
-Here are the complete files for your **GiftGenius MVP** that you can upload to GitHub:
-
-## **1. index.html**
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,23 +8,19 @@ Here are the complete files for your **GiftGenius MVP** that you can upload to G
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
         <header>
             <div class="logo">🎁 GiftGenius</div>
             <p class="tagline">Find the perfect gift, powered by AI</p>
         </header>
 
-        <!-- Main Content -->
         <main>
             <div class="hero-section">
                 <h1>Discover the Perfect Gift</h1>
                 <p>Answer a few questions and get personalized gift recommendations</p>
             </div>
 
-            <!-- Gift Finder Form -->
             <div class="gift-finder" id="giftFinder">
                 <form id="giftForm">
-                    <!-- Question 1: Who is the gift for? -->
                     <div class="question-card">
                         <label class="question-label">Who is the gift for?</label>
                         <select id="recipient" name="recipient" required>
@@ -43,7 +35,6 @@ Here are the complete files for your **GiftGenius MVP** that you can upload to G
                         </select>
                     </div>
 
-                    <!-- Question 2: What's the occasion? -->
                     <div class="question-card">
                         <label class="question-label">What's the occasion?</label>
                         <select id="occasion" name="occasion" required>
@@ -59,7 +50,6 @@ Here are the complete files for your **GiftGenius MVP** that you can upload to G
                         </select>
                     </div>
 
-                    <!-- Question 3: Budget -->
                     <div class="question-card">
                         <label class="question-label">What's your budget?</label>
                         <select id="budget" name="budget" required>
@@ -72,7 +62,6 @@ Here are the complete files for your **GiftGenius MVP** that you can upload to G
                         </select>
                     </div>
 
-                    <!-- Question 4: Interests -->
                     <div class="question-card">
                         <label class="question-label">What are their interests?</label>
                         <select id="interest" name="interest" required>
@@ -90,14 +79,12 @@ Here are the complete files for your **GiftGenius MVP** that you can upload to G
                         </select>
                     </div>
 
-                    <!-- Submit Button -->
                     <button type="submit" class="submit-btn" id="submitBtn">
                         ✨ Find Perfect Gifts
                     </button>
                 </form>
             </div>
 
-            <!-- Results Section -->
             <div class="results-section" id="resultsSection" style="display: none;">
                 <h2>🎉 Your Personalized Gift Recommendations</h2>
                 <div id="giftResults" class="gift-grid"></div>
@@ -105,7 +92,6 @@ Here are the complete files for your **GiftGenius MVP** that you can upload to G
             </div>
         </main>
 
-        <!-- Footer -->
         <footer>
             <p>Made with ❤️ by <a href="https://github.com/pbalasubramaniam789-sketch" target="_blank">Balasubramaniam</a></p>
             <p class="footer-note">© 2025 GiftGenius - All rights reserved</p>
@@ -115,327 +101,3 @@ Here are the complete files for your **GiftGenius MVP** that you can upload to G
     <script src="script.js"></script>
 </body>
 </html>
-```
-
-## **2. style.css**
-```css
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    padding: 20px;
-    color: #2d3748;
-}
-
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-/* Header */
-header {
-    text-align: center;
-    padding: 30px 0;
-    color: white;
-}
-
-.logo {
-    font-size: 3em;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-}
-
-.tagline {
-    font-size: 1.2em;
-    opacity: 0.95;
-}
-
-/* Main Content */
-main {
-    background: white;
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-}
-
-/* Hero Section */
-.hero-section {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.hero-section h1 {
-    font-size: 2.5em;
-    color: #667eea;
-    margin-bottom: 15px;
-}
-
-.hero-section p {
-    font-size: 1.2em;
-    color: #718096;
-}
-
-/* Gift Finder Form */
-.gift-finder {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.question-card {
-    margin-bottom: 25px;
-}
-
-.question-label {
-    display: block;
-    font-size: 1.1em;
-    font-weight: 600;
-    color: #2d3748;
-    margin-bottom: 10px;
-}
-
-select {
-    width: 100%;
-    padding: 15px;
-    font-size: 1em;
-    border: 2px solid #e2e8f0;
-    border-radius: 10px;
-    background: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-select:hover {
-    border-color: #667eea;
-}
-
-select:focus {
-    outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-}
-
-/* Submit Button */
-.submit-btn {
-    width: 100%;
-    padding: 18px;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: white;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 20px;
-}
-
-.submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-}
-
-.submit-btn:active {
-    transform: translateY(0);
-}
-
-/* Results Section */
-.results-section {
-    animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.results-section h2 {
-    text-align: center;
-    color: #667eea;
-    margin-bottom: 30px;
-    font-size: 2em;
-}
-
-.gift-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-.gift-card {
-    background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
-    padding: 25px;
-    border-radius: 15px;
-    border: 2px solid #e2e8f0;
-    transition: all 0.3s ease;
-}
-
-.gift-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
-    border-color: #667eea;
-}
-
-.gift-icon {
-    font-size: 3em;
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.gift-name {
-    font-size: 1.3em;
-    font-weight: bold;
-    color: #2d3748;
-    margin-bottom: 10px;
-}
-
-.gift-description {
-    color: #718096;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-.gift-price {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #667eea;
-    margin-bottom: 15px;
-}
-
-.buy-btn {
-    width: 100%;
-    padding: 12px;
-    background: #667eea;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.buy-btn:hover {
-    background: #764ba2;
-}
-
-/* Retry Button */
-.retry-btn {
-    display: block;
-    margin: 0 auto;
-    padding: 15px 40px;
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #667eea;
-    background: white;
-    border: 2px solid #667eea;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.retry-btn:hover {
-    background: #667eea;
-    color: white;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    color: white;
-    padding: 30px 0 20px;
-    margin-top: 40px;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-bottom: 2px solid white;
-}
-
-footer a:hover {
-    opacity: 0.8;
-}
-
-.footer-note {
-    margin-top: 10px;
-    font-size: 0.9em;
-    opacity: 0.8;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .logo {
-        font-size: 2em;
-    }
-
-    .hero-section h1 {
-        font-size: 1.8em;
-    }
-
-    main {
-        padding: 25px;
-    }
-
-    .gift-grid {
-        grid-template-columns: 1fr;
-    }
-}
-```
-
-## **3. script.js**
-```javascript
-// Gift database with recommendations
-const giftDatabase = {
-    mom: {
-        birthday: {
-            technology: [
-                { name: "Smart Watch", icon: "⌚", description: "Track health & stay connected", price: "₹3,500" },
-                { name: "Kindle E-Reader", icon: "📚", description: "Thousands of books at her fingertips", price: "₹7,999" }
-            ],
-            fashion: [
-                { name: "Designer Handbag", icon: "👜", description: "Elegant & stylish accessory", price: "₹4,500" },
-                { name: "Silk Saree", icon: "🥻", description: "Traditional elegance", price: "₹3,000" }
-            ],
-            default: [
-                { name: "Spa Gift Voucher", icon: "💆‍♀️", description: "Relaxation & pampering", price: "₹2,500" },
-                { name: "Jewelry Set", icon: "💎", description: "Timeless beauty", price: "₹5,000" }
-            ]
-        },
-        default: {
-            default: [
-                { name: "Personalized Photo Frame", icon: "🖼️", description: "Cherished memories", price: "₹800" },
-                { name: "Aromatherapy Set", icon: "🕯️", description: "Relaxation essentials", price: "₹1,200" }
-            ]
-        }
-    },
-    dad: {
-        birthday: {
-            technology: [
-                { name: "Wireless Earbuds", icon: "🎧", description: "Premium sound quality", price: "₹2,999" },
-                { name: "Smart Speaker", icon: "🔊", description: "Voice-controlled assistant", price: "₹4,500" }
-            ],
-            sports: [
-                { name: "Fitness Tracker", icon: "⌚", description: "Monitor health & activity", price: "₹3,500" },
-                { name: "Golf Club Set", icon: "⛳", description: "Pro-level equipment", price: "₹8,000" }
-            ],
-            default: [
-                { name: "Premium Wallet", icon: "👔", description: "Leather craftsmanship", price: "₹1,800" },
-                { name: "Grooming Kit", icon: "💈", description: "Complete care package", price: "₹2,200" }
-            ]
-        },
-        default: {
-            default:
