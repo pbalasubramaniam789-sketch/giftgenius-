@@ -51,10 +51,10 @@ function getNumericPrice(priceStr) {
 function filterByBudget(giftList, budget) {
     const budgetRanges = {
         'under500': { min: 0, max: 500 },
-        '500-1000': { min: 500, max: 1000 },
-        '1000-2500': { min: 1000, max: 2500 },
-        '2500-5000': { min: 2500, max: 5000 },
-        'above5000': { min: 5000, max: Infinity }
+        '500-1000': { min: 501, max: 1000 },
+        '1000-2500': { min: 1001, max: 2500 },
+        '2500-5000': { min: 2501, max: 5000 },
+        'above5000': { min: 5001, max: Infinity }
     };
 
     const range = budgetRanges[budget];
