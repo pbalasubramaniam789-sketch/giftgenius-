@@ -99,6 +99,12 @@ document.getElementById('giftForm').addEventListener('submit', function(e) {
     const resultsDiv = document.getElementById('giftResults');
     resultsDiv.innerHTML = '';
 
+        // If still no gifts found, show message
+    if (selectedGifts.length === 0) {
+        resultsDiv.innerHTML = '<div style="text-align: center; padding: 40px; color: #666;"><h3>😔 No gifts found</h3><p>We couldn\'t find any gifts matching your budget criteria. Please try a different budget range.</p></div>';
+        return;
+    }
+
     selectedGifts.forEach(gift => {
         const giftCard = document.createElement('div');
         giftCard.className = 'gift-card';
